@@ -863,8 +863,9 @@ def LargeByValueCopy : DiagGroup<"large-by-value-copy">;
 def DuplicateArgDecl : DiagGroup<"duplicate-method-arg">;
 def SignedEnumBitfield : DiagGroup<"signed-enum-bitfield">;
 
+def ReservedModuleIdentifier : DiagGroup<"reserved-module-identifier">;
 def ReservedIdentifier : DiagGroup<"reserved-identifier",
-    [ReservedIdAsMacro]>;
+    [ReservedIdAsMacro, ReservedModuleIdentifier]>;
 
 // Unreachable code warning groups.
 //
@@ -1336,9 +1337,14 @@ def CudaUnknownVersion: DiagGroup<"unknown-cuda-version">;
 // ignored by CUDA.
 def HIPOnly : DiagGroup<"hip-only">;
 
+<<<<<<< HEAD
 // A warning generated when compiling SYCL applications for HIP or CUDA backends
 // without linking LIBSPIRV.
 def NoLibspirvHipCuda : DiagGroup<"no-libspirv-hip-cuda">;
+=======
+// Warning about mixed HIP and OpenMP compilation / target offloading.
+def HIPOpenMPOffloading: DiagGroup<"hip-omp-target-directives">;
+>>>>>>> 55916de2d37742fe334c0726ccf9e584bdaed09f
 
 // Warnings which cause linking of the runtime libraries like
 // libc and the CRT to be skipped.
